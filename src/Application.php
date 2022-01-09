@@ -168,6 +168,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
      */
     public function services(ContainerInterface $container): void
     {
+        require CONFIG . DS . 'services.php';
     }
 
     /**
