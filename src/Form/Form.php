@@ -28,4 +28,17 @@ class Form extends CakeForm
     {
         return !$this->isValid();
     }
+
+    /**
+     * {@inheritDoc}
+     *
+     * Quitely excludes `$data` fields that aren't included
+     * in this form's schema definition.
+     */
+    public function setData(array $data)
+    {
+        $fields = array_flip($this->getSchema()->fields());
+
+        return parent::setData(array_intersect_key($data, $fields));
+    }
 }

@@ -7,7 +7,9 @@
 
 use App\Form\Form;
 use App\Form\SignupForm;
+use App\MongoDbClientFactory;
 use Cake\Routing\Router;
+use MongoDB\Database;
 
 $request = Router::getRequest();
 
@@ -20,10 +22,12 @@ $container
     ->inflector(Form::class)
     ->invokeMethod('setData', [
         $request
-            ? (array)json_decode($request->getBody(), true)
+            ? (array)($request->getData())
             : []
     ]);
+
 
 /**
  * Other?
  */
+$container->addShared(Database::class, fn () => MongoDbClientFactory::get());
