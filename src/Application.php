@@ -16,6 +16,7 @@ declare(strict_types=1);
  */
 namespace App;
 
+use App\Identifier\Resolver\ApiKeyResolver;
 use App\Identifier\Resolver\DatabaseResolver;
 use Authentication\AuthenticationService;
 use Authentication\AuthenticationServiceInterface;
@@ -125,6 +126,12 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
      */
     public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
     {
+        $path = $request->getUri()->getPath();
+
+        if (strpos($path, '/api') === 0) {
+            return $this->apiAuthService();
+        }
+
         $service = new AuthenticationService();
 
         // Define where users should be redirected to when they are not authenticated
@@ -157,6 +164,27 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
         // Load identifiers
         $service->loadIdentifier('Authentication.Password', compact('fields') + [
             'resolver' => ['className' => DatabaseResolver::class]
+        ]);
+
+        return $service;
+    }
+
+    /**
+     * Returns an auth service provider for api requests.
+     *
+     * @return AuthenticationServiceInterface
+     */
+    public function apiAuthService(): AuthenticationServiceInterface
+    {
+        $service = new AuthenticationService();
+
+        // Accept API tokens only
+        $service->loadAuthenticator('Authentication.Token', [
+            'header' => 'Authorization',
+            'tokenPrefix' => 'Bearer'
+        ]);
+        $service->loadIdentifier('Authentication.Token', [
+            'resolver' => ['className' => ApiKeyResolver::class]
         ]);
 
         return $service;

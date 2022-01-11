@@ -16,8 +16,8 @@ declare(strict_types=1);
  */
 namespace App\Controller;
 
-use Authentication\Identifier\PasswordIdentifier;
 use Cake\Controller\Controller;
+use Cake\Http\Response;
 
 /**
  * Application Controller
@@ -53,5 +53,21 @@ class AppController extends Controller
          */
         //$this->loadComponent('FormProtection');
         $this->loadComponent('Authentication.Authentication');
+    }
+
+    /**
+     * Generate a response object with JSON content.
+     *
+     * @param mixed $data Response data to be json-encoded.
+     * @param int $status HTTP status code for this response.
+     *
+     * @return Response
+     */
+    public function json($data = [], int $status = 200): Response
+    {
+        return $this->getResponse()
+            ->withType('json')
+            ->withStatus($status)
+            ->withStringBody(json_encode($data));
     }
 }
