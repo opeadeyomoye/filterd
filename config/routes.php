@@ -52,6 +52,10 @@ return static function (RouteBuilder $routes) {
         $builder->connect('/dashboard', ['controller' => 'Customers', 'action' => 'dashboard']);
     });
 
+    $routes->scope('/api', function (RouteBuilder $builder) {
+        $builder->post('/images:annotate', ['controller' => 'Images', 'action' => 'annotate']);
+    });
+
     /*
      * If you need a different set of middleware or none at all,
      * open new scope and define routes there.
