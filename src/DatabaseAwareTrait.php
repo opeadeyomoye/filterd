@@ -5,7 +5,7 @@ namespace App;
 
 use MongoDB\Database;
 
-trait MongoDbClientAwareTrait
+trait DatabaseAwareTrait
 {
     public function db(): Database
     {

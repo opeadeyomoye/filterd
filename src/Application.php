@@ -18,6 +18,7 @@ namespace App;
 
 use App\Identifier\Resolver\ApiKeyResolver;
 use App\Identifier\Resolver\DatabaseResolver;
+use App\Middleware\RateLimitingMiddleware;
 use Authentication\AuthenticationService;
 use Authentication\AuthenticationServiceInterface;
 use Authentication\AuthenticationServiceProviderInterface;
@@ -123,7 +124,9 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
             // https://book.cakephp.org/4/en/controllers/middleware.html#cross-site-request-forgery-csrf-middleware
             ->add($csrf)
 
-            ->add(new AuthenticationMiddleware($this));
+            ->add(new AuthenticationMiddleware($this))
+
+            ->add(new RateLimitingMiddleware());
 
         return $middlewareQueue;
     }

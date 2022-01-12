@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Identifier\Resolver;
 
-use App\MongoDbClientAwareTrait;
+use App\DatabaseAwareTrait;
 use Authentication\Identifier\Resolver\ResolverInterface;
 
 /**
@@ -12,7 +12,7 @@ use Authentication\Identifier\Resolver\ResolverInterface;
  */
 class ApiKeyResolver implements ResolverInterface
 {
-    use MongoDbClientAwareTrait;
+    use DatabaseAwareTrait;
 
     /**
      * {@inheritDoc}
