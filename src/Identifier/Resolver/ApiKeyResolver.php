@@ -4,15 +4,16 @@ declare(strict_types=1);
 
 namespace App\Identifier\Resolver;
 
-use App\MongoDbClientFactory;
+use App\MongoDbClientAwareTrait;
 use Authentication\Identifier\Resolver\ResolverInterface;
-use MongoDB\Database;
 
 /**
  * Helps identify customers by their api keys.
  */
 class ApiKeyResolver implements ResolverInterface
 {
+    use MongoDbClientAwareTrait;
+
     /**
      * {@inheritDoc}
      */
@@ -28,16 +29,14 @@ class ApiKeyResolver implements ResolverInterface
             return null;
         }
 
-        return $this->db()
+        $identity = $this->db()
             ->selectCollection('customers')
             ->findOne(['_id' => $apiKey['customerId']]);
-    }
 
-    /**
-     * @return Database
-     */
-    protected function db(): Database
-    {
-        return MongoDbClientFactory::get();
+        if (!$identity) {
+            return null;
+        }
+
+        return ['apiKey' => $key] + (array)$identity;
     }
 }

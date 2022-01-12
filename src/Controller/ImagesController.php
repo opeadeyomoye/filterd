@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Form\AnnotateImageForm;
+use App\ImageAnnotationResult;
 use Cake\Http\Response;
 use Google\Cloud\Vision\V1\Feature\Type as AnnotationType;
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
@@ -23,17 +24,17 @@ class ImagesController extends AppController
      * @param AnnotateImageForm $form
      * @return Response
      */
-    public function annotate(AnnotateImageForm $form): Response
+    public function annotate(AnnotateImageForm $form, Database $db): Response
     {
         if ($form->hasErrors()) {
             return $this->json(['errors' => $form->getErrors()], 400);
         }
 
+        $image = $form->getData('image')->getStream()->getContents();
         $client = new ImageAnnotatorClient();
 
         try {
-            $annotation = $client->annotateImage(
-                $form->getData('image')->getStream()->getContents(),
+            $annotation = $client->annotateImage($image,
                 [AnnotationType::SAFE_SEARCH_DETECTION]
             );
         } catch (Throwable $e) {
@@ -41,9 +42,20 @@ class ImagesController extends AppController
         }
 
         $safeSearch = $annotation->getSafeSearchAnnotation();
+        $result = json_decode($safeSearch->serializeToJsonString());
 
-        return $this->json([
-            'annotation' => json_decode($safeSearch->serializeToJsonString()),
-        ]);
+        $prediction = (new ImageAnnotationResult($safeSearch))->getPrediction();
+
+        $db->selectCollection('imageAnnotations')
+            ->insertOne([
+                'hash' => md5($image),
+                'customerId' => $this->Authentication->getIdentityData('_id'),
+                'apiKey' => $this->Authentication->getIdentityData('apiKey'),
+                'result' => (array)$result,
+                'prediction' => $prediction,
+                'created' => new UTCDateTime(),
+            ]);
+
+        return $this->json(compact('prediction'));
     }
 }

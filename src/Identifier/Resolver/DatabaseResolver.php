@@ -4,15 +4,16 @@ declare(strict_types=1);
 
 namespace App\Identifier\Resolver;
 
-use App\MongoDbClientFactory;
+use App\MongoDbClientAwareTrait;
 use Authentication\Identifier\Resolver\ResolverInterface;
-use MongoDB\Database;
 
 /**
  * Helps resolve identities stored in MongoDB.
  */
 class DatabaseResolver implements ResolverInterface
 {
+    use MongoDbClientAwareTrait;
+
     /**
      * {@inheritDoc}
      */
@@ -23,13 +24,5 @@ class DatabaseResolver implements ResolverInterface
         return $this->db()
             ->selectCollection('customers')
             ->findOne(compact('email'));
-    }
-
-    /**
-     * @return Database
-     */
-    protected function db(): Database
-    {
-        return MongoDbClientFactory::get();
     }
 }
