@@ -13,17 +13,18 @@
         <span class="block text-teal-600 xl:inline">at scale</span>
       </h1>
       <p class="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
-        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+        Say goodbye to slow, manual content reviews. With our blazing-fast, AI-powered APIs,
+        moderating all your user-generated content happens in seconds. Not hours.
       </p>
       <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
         <div class="rounded-md shadow">
-          <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 md:py-4 md:text-lg md:px-10">
+          <a href="<?= $this->Url->build('/sign-up') ?>" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 md:py-4 md:text-lg md:px-10">
             Get started
           </a>
         </div>
         <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-          <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-teal-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
-            Live demo
+          <a x-data="{}" @click.prevent="document.getElementById('details').scrollIntoView({ behavior: 'smooth' })" href="#details" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-teal-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+            Learn more
           </a>
         </div>
       </div>
@@ -35,16 +36,17 @@
 </div>
 
 
-<div class="py-16 bg-white overflow-hidden lg:py-24">
+<div id="details" class="py-16 bg-white overflow-hidden lg:py-24">
   <div class="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
 
     <div class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
       <div class="relative">
         <h3 class="text-2xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">
-          Transfer funds world-wide
+          Eliminate worrying images in an instant
         </h3>
         <p class="mt-3 text-lg text-gray-500">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima sequi recusandae, porro maiores officia assumenda aliquam laborum ab aliquid veritatis impedit odit adipisci optio iste blanditiis facere. Totam, velit.
+          Automatically identify and remove various classes of offensive content like nudity,
+          drugs, violence and more, all without breaking a sweat.
         </p>
 
       </div>
@@ -67,10 +69,11 @@
       <div class="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
         <div class="lg:col-start-2 lg:pl-12">
           <h3 class="text-2xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">
-            Always in the loop
+            Let the good stuff in. With ease.
           </h3>
           <p class="mt-3 text-lg text-gray-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ex obcaecati natus eligendi delectus, cum deleniti sunt in labore nihil quod quibusdam expedita nemo.
+            Approving safe content has never been faster. According to Sharon in IT,
+            great cat pics make our AI engine even smarter. So please send lots of those.
           </p>
 
         </div>
@@ -82,12 +85,13 @@
     </div>
 
     <div class="relative mt-12 sm:mt-16 lg:mt-48 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-      <div class="relative">
+      <div class="relative lg:pr-12">
         <h3 class="text-2xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">
-          Enjoy your new-found freedom
+          Take a walk on the beach
         </h3>
         <p class="mt-3 text-lg text-gray-500">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima sequi recusandae, porro maiores officia assumenda aliquam laborum ab aliquid veritatis impedit odit adipisci optio iste blanditiis facere. Totam, velit.
+          Or learn to play the violin. Maybe read that book? 👀. We automate your
+          content moderation so you can explore more of what life has to offer.
         </p>
 
       </div>
@@ -111,7 +115,7 @@
           Simple, clear pricing
         </p>
         <p class="text-xl text-gray-300">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum sequi unde repudiandae natus.
+          <!-- -->
         </p>
       </div>
     </div>
@@ -135,7 +139,7 @@
                 </span>
               </div>
               <p class="mt-5 text-lg text-gray-500">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                For small websites and blogs. Free forever.
               </p>
             </div>
             <div class="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-50 space-y-6 sm:p-10 sm:pt-6">
@@ -148,7 +152,7 @@
                     </svg>
                   </div>
                   <p class="ml-3 text-base text-gray-700">
-                    Pariatur quod similique
+                    100 API calls per month
                   </p>
                 </li>
 
@@ -160,7 +164,7 @@
                     </svg>
                   </div>
                   <p class="ml-3 text-base text-gray-700">
-                    Sapiente libero doloribus modi nostrum
+                    99.9% uptime
                   </p>
                 </li>
 
@@ -172,19 +176,7 @@
                     </svg>
                   </div>
                   <p class="ml-3 text-base text-gray-700">
-                    Vel ipsa esse repudiandae excepturi
-                  </p>
-                </li>
-
-                <li class="flex items-start">
-                  <div class="flex-shrink-0">
-                    <!-- Heroicon name: outline/check -->
-                    <svg class="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <p class="ml-3 text-base text-gray-700">
-                    Itaque cupiditate adipisci quibusdam
+                    24 hour email support
                   </p>
                 </li>
               </ul>
@@ -204,13 +196,13 @@
                 </h3>
               </div>
               <div class="mt-4 flex items-baseline text-6xl font-extrabold">
-                $79
+                $99
                 <span class="ml-1 text-2xl font-medium text-gray-500">
                   /mo
                 </span>
               </div>
               <p class="mt-5 text-lg text-gray-500">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Everything included in free plus:
               </p>
             </div>
             <div class="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-50 space-y-6 sm:p-10 sm:pt-6">
@@ -223,7 +215,7 @@
                     </svg>
                   </div>
                   <p class="ml-3 text-base text-gray-700">
-                    Pariatur quod similique
+                    50,000 API calls per month
                   </p>
                 </li>
 
@@ -235,7 +227,7 @@
                     </svg>
                   </div>
                   <p class="ml-3 text-base text-gray-700">
-                    Sapiente libero doloribus modi nostrum
+                    Faster response times
                   </p>
                 </li>
 
@@ -247,7 +239,7 @@
                     </svg>
                   </div>
                   <p class="ml-3 text-base text-gray-700">
-                    Vel ipsa esse repudiandae excepturi
+                    Batch annotations
                   </p>
                 </li>
 
@@ -259,7 +251,7 @@
                     </svg>
                   </div>
                   <p class="ml-3 text-base text-gray-700">
-                    Itaque cupiditate adipisci quibusdam
+                    Premium support
                   </p>
                 </li>
               </ul>
