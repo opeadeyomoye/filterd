@@ -33,6 +33,12 @@ class CustomersController extends AppController
      */
     public function signup(SignupForm $form, Database $db): ?Response
     {
+        $result = $this->Authentication->getResult();
+
+        if ($result->isValid()) {
+            return $this->redirect(['action' => 'dashboard']);
+        }
+
         if (!$this->request->is('post')) {
             return null;
         }
@@ -87,7 +93,7 @@ class CustomersController extends AppController
         }
 
         if ($this->request->is('post') && !$result->isValid()) {
-            $this->Flash->error('Invalid username or password');
+            $this->Flash->warning('Invalid username or password');
         }
     }
 
@@ -98,8 +104,17 @@ class CustomersController extends AppController
         return $this->redirect(['controller' => 'Pages', 'action' => 'home']);
     }
 
-    public function dashboard()
+    public function dashboard(Database $db)
     {
+        $identity = $this->Authentication->getIdentity();
+
+        $apiKey = $db
+            ->selectCollection('apiKeys')
+            ->findOne(['customerId' => $identity->offsetGet('_id')])
+            ['_id'];
+
+        $this->viewBuilder()->setLayout('auth');
+        $this->set(compact('apiKey', 'identity'));
     }
 
     /**

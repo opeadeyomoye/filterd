@@ -21,7 +21,7 @@ class DatabaseResolver implements ResolverInterface
     {
         $email = array_values($conditions)[0];
 
-        return $this->db()
+        return (array)$this->db()
             ->selectCollection('customers')
             ->findOne(compact('email'));
     }

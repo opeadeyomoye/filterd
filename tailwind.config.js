@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        logo: ['Be Vietnam Pro', ...defaultTheme.fontFamily.sans]
       },
     },
   },

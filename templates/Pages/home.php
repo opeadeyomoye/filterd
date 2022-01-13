@@ -5,8 +5,295 @@
  */
 ?>
 
-<div class="mt-12 pl-6">
-  <a href="<?= $this->Url->build('/sign-up') ?>" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-    Get Started &rarr;
-  </a>
+<div class="lg:relative">
+  <div class="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
+    <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
+      <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+        <span class="block xl:inline">Moderate content</span>
+        <span class="block text-teal-600 xl:inline">at scale</span>
+      </h1>
+      <p class="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
+        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+      </p>
+      <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
+        <div class="rounded-md shadow">
+          <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 md:py-4 md:text-lg md:px-10">
+            Get started
+          </a>
+        </div>
+        <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+          <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-teal-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+            Live demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
+    <img class="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1515560570411-00a0026e6086?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
+  </div>
+</div>
+
+
+<div class="py-16 bg-white overflow-hidden lg:py-24">
+  <div class="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
+
+    <div class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+      <div class="relative">
+        <h3 class="text-2xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">
+          Transfer funds world-wide
+        </h3>
+        <p class="mt-3 text-lg text-gray-500">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima sequi recusandae, porro maiores officia assumenda aliquam laborum ab aliquid veritatis impedit odit adipisci optio iste blanditiis facere. Totam, velit.
+        </p>
+
+      </div>
+
+      <div class="mt-10 -mx-4 relative lg:mt-0 lg:pl-12" aria-hidden="true">
+        <img class="relative mx-auto sm:rounded-xl sm:shadow-xl" src="<?= $this->Url->build('/img/unsafe.png') ?>" alt="">
+      </div>
+    </div>
+
+    <svg class="hidden lg:block absolute right-full transform translate-x-1/2 translate-y-12" width="404" height="784" fill="none" viewBox="0 0 404 784" aria-hidden="true">
+      <defs>
+        <pattern id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+        </pattern>
+      </defs>
+      <rect width="404" height="784" fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)" />
+    </svg>
+
+    <div class="relative mt-12 sm:mt-16 lg:mt-48">
+      <div class="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
+        <div class="lg:col-start-2 lg:pl-12">
+          <h3 class="text-2xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">
+            Always in the loop
+          </h3>
+          <p class="mt-3 text-lg text-gray-500">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ex obcaecati natus eligendi delectus, cum deleniti sunt in labore nihil quod quibusdam expedita nemo.
+          </p>
+
+        </div>
+
+        <div class="mt-10 -mx-4 relative lg:mt-0 lg:col-start-1">
+          <img class="relative mx-auto sm:rounded-xl sm:shadow-xl" src="<?= $this->Url->build('/img/safe-analysis.png') ?>" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="relative mt-12 sm:mt-16 lg:mt-48 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+      <div class="relative">
+        <h3 class="text-2xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">
+          Enjoy your new-found freedom
+        </h3>
+        <p class="mt-3 text-lg text-gray-500">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima sequi recusandae, porro maiores officia assumenda aliquam laborum ab aliquid veritatis impedit odit adipisci optio iste blanditiis facere. Totam, velit.
+        </p>
+
+      </div>
+
+      <div class="mt-10 -mx-4 relative lg:mt-0 lg:pl-12" aria-hidden="true">
+        <img class="relative mx-auto sm:rounded-xl sm:shadow-xl" src="<?= $this->Url->build('/img/beach.png') ?>" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div id="pricing" class="bg-teal-900">
+  <div class="pt-12 sm:pt-16 lg:pt-24">
+    <div class="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto space-y-2 lg:max-w-none">
+        <h2 class="text-lg leading-6 font-semibold text-gray-300 uppercase tracking-wider">
+          Pricing
+        </h2>
+        <p class="text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">
+          Simple, clear pricing
+        </p>
+        <p class="text-xl text-gray-300">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum sequi unde repudiandae natus.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="mt-8 pb-12 bg-gray-50 sm:mt-12 sm:pb-16 lg:mt-16 lg:pb-24">
+    <div class="relative">
+      <div class="absolute inset-0 h-3/4 bg-teal-900"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md mx-auto space-y-4 lg:max-w-5xl lg:grid lg:grid-cols-2 lg:gap-5 lg:space-y-0">
+          <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+            <div class="px-6 py-8 bg-white sm:p-10 sm:pb-6">
+              <div>
+                <h3 class="inline-flex rounded-full text-sm font-semibold tracking-wide uppercase text-gray-600" id="tier-standard">
+                  Free
+                </h3>
+              </div>
+              <div class="mt-4 flex items-baseline text-6xl font-extrabold">
+                $0
+                <span class="ml-1 text-2xl font-medium text-gray-500">
+                  /mo
+                </span>
+              </div>
+              <p class="mt-5 text-lg text-gray-500">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </div>
+            <div class="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-50 space-y-6 sm:p-10 sm:pt-6">
+              <ul role="list" class="space-y-4">
+                <li class="flex items-start">
+                  <div class="flex-shrink-0">
+                    <!-- Heroicon name: outline/check -->
+                    <svg class="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-base text-gray-700">
+                    Pariatur quod similique
+                  </p>
+                </li>
+
+                <li class="flex items-start">
+                  <div class="flex-shrink-0">
+                    <!-- Heroicon name: outline/check -->
+                    <svg class="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-base text-gray-700">
+                    Sapiente libero doloribus modi nostrum
+                  </p>
+                </li>
+
+                <li class="flex items-start">
+                  <div class="flex-shrink-0">
+                    <!-- Heroicon name: outline/check -->
+                    <svg class="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-base text-gray-700">
+                    Vel ipsa esse repudiandae excepturi
+                  </p>
+                </li>
+
+                <li class="flex items-start">
+                  <div class="flex-shrink-0">
+                    <!-- Heroicon name: outline/check -->
+                    <svg class="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-base text-gray-700">
+                    Itaque cupiditate adipisci quibusdam
+                  </p>
+                </li>
+              </ul>
+              <div class="rounded-md shadow">
+                <a href="<?= $this->Url->build('/sign-up') ?>" class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-teal-800 hover:bg-teal-900" aria-describedby="tier-standard">
+                  Get started
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+            <div class="px-6 py-8 bg-white sm:p-10 sm:pb-6">
+              <div>
+                <h3 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-blue-100 text-blue-600" id="tier-standard">
+                  Coming Soon
+                </h3>
+              </div>
+              <div class="mt-4 flex items-baseline text-6xl font-extrabold">
+                $79
+                <span class="ml-1 text-2xl font-medium text-gray-500">
+                  /mo
+                </span>
+              </div>
+              <p class="mt-5 text-lg text-gray-500">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </div>
+            <div class="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-50 space-y-6 sm:p-10 sm:pt-6">
+              <ul role="list" class="space-y-4">
+                <li class="flex items-start">
+                  <div class="flex-shrink-0">
+                    <!-- Heroicon name: outline/check -->
+                    <svg class="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-base text-gray-700">
+                    Pariatur quod similique
+                  </p>
+                </li>
+
+                <li class="flex items-start">
+                  <div class="flex-shrink-0">
+                    <!-- Heroicon name: outline/check -->
+                    <svg class="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-base text-gray-700">
+                    Sapiente libero doloribus modi nostrum
+                  </p>
+                </li>
+
+                <li class="flex items-start">
+                  <div class="flex-shrink-0">
+                    <!-- Heroicon name: outline/check -->
+                    <svg class="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-base text-gray-700">
+                    Vel ipsa esse repudiandae excepturi
+                  </p>
+                </li>
+
+                <li class="flex items-start">
+                  <div class="flex-shrink-0">
+                    <!-- Heroicon name: outline/check -->
+                    <svg class="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-base text-gray-700">
+                    Itaque cupiditate adipisci quibusdam
+                  </p>
+                </li>
+              </ul>
+              <div class="rounded-md shadow">
+                <button disabled class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-500 bg-gray-100" aria-describedby="tier-standard">
+                  Coming Soon
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="bg-gray-50 mt-16 md:mt-24">
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+    <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+      <span class="block">What are you waiting for?</span>
+      <span class="block text-teal-600">Start your free trial today.</span>
+    </h2>
+    <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+      <div class="inline-flex rounded-md shadow">
+        <a href="<?= $this->Url->build('/sign-up') ?>" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700">
+          Get started
+        </a>
+      </div>
+      <div class="hidden ml-3 inline-flex rounded-md shadow">
+        <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-teal-600 bg-white hover:bg-teal-50">
+          Learn more
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
