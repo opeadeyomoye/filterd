@@ -6,7 +6,6 @@ RUN apt-get update && apt-get install -y \
       libicu-dev \
       libpq-dev \
       libmcrypt-dev \
-      mariadb-client \
       git \
       zlib1g-dev \
       libzip-dev \
@@ -21,7 +20,6 @@ RUN apt-get update && apt-get install -y \
       # mbstring \
       # openssl \
       pcntl \
-      pdo_mysql \
       zip \
       opcache
 
