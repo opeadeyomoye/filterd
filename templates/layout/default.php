@@ -195,7 +195,7 @@ $buildVersion = env('BUILD_VERSION');
             <a @click.prevent="document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' })" href="#pricing" class="text-base font-medium text-gray-500 hover:text-gray-900">
               Pricing
             </a>
-            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+            <a href="<?= $this->Url->build('docs') ?>" class="text-base font-medium text-gray-500 hover:text-gray-900">
               Docs
             </a>
             <a href="https://github.com/opeadeyomoye/filterd" class="flex items-center text-base font-medium text-gray-500 hover:text-gray-900" target="_blank" rel="noopener noreferrer">
