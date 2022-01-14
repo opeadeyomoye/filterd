@@ -6,6 +6,8 @@ RUN apt-get update && apt-get install -y \
       libicu-dev \
       libpq-dev \
       libmcrypt-dev \
+      libssl-dev \
+      pkg-config \
       git \
       zlib1g-dev \
       libzip-dev \
