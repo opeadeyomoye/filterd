@@ -50,6 +50,7 @@ return static function (RouteBuilder $routes) {
         $builder->connect('/login', ['controller' => 'Customers', 'action' => 'login']);
         $builder->connect('/logout', ['controller' => 'Customers', 'action' => 'logout']);
         $builder->connect('/dashboard', ['controller' => 'Customers', 'action' => 'dashboard']);
+        $builder->connect('/docs', ['controller' => 'Pages', 'action' => 'docs']);
     });
 
     $routes->scope('/api', function (RouteBuilder $builder) {

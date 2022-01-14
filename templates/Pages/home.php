@@ -72,8 +72,13 @@
             Let the good stuff in. With ease.
           </h3>
           <p class="mt-3 text-lg text-gray-500">
-            Approving safe content has never been faster. According to Sharon in IT,
-            great cat pics make our AI engine even smarter. So please send lots of those.
+            From selfies to shopping lists to wedding pictures, you can count on us to
+            approve all your safe content, <b>fast</b>.
+          </p>
+
+          <p class="mt-6 text-sm text-gray-500">
+            (PS: according to Sharon in IT,
+            great cat pics make our AI engine even smarter. So please send lots of those).
           </p>
 
         </div>
@@ -87,7 +92,7 @@
     <div class="relative mt-12 sm:mt-16 lg:mt-48 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
       <div class="relative lg:pr-12">
         <h3 class="text-2xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">
-          Take a walk on the beach
+          Take that beach walk
         </h3>
         <p class="mt-3 text-lg text-gray-500">
           Or learn to play the violin. Maybe read that book? 👀. We automate your

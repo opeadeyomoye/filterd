@@ -31,10 +31,14 @@ class PagesController extends AppController
     {
         parent::initialize();
 
-        $this->Authentication->allowUnauthenticated(['home']);
+        $this->Authentication->allowUnauthenticated(['home', 'docs']);
     }
 
     public function home(): void
+    {
+    }
+
+    public function docs(): void
     {
     }
 }
