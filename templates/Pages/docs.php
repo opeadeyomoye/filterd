@@ -130,11 +130,11 @@ curl \
 200 OK
 {
   <span class="text-yellow-500">"suggestion": "reject",</span> <span class="text-gray-500">// accept, reject, or review</span>
-  <span class="text-yellow-500">"concerns": {</span>
+  <span class="text-yellow-500">"concerns": </span>{
     <span class="text-yellow-500">"adult": "VERY_LIKELY",</span>
     <span class="text-yellow-500">"racy": "LIKELY",</span>
-    <span class="text-yellow-500">"violence": "POSSIBLE",</span>
-  <span class="text-yellow-500">}</span>
+    <span class="text-yellow-500">"violence": "POSSIBLE"</span>
+  }
 }</pre>
       </div>
   </div>

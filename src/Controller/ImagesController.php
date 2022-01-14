@@ -44,7 +44,9 @@ class ImagesController extends AppController
         $safeSearch = $annotation->getSafeSearchAnnotation();
         $result = json_decode($safeSearch->serializeToJsonString());
 
-        $prediction = (new ImageAnnotationResult($safeSearch))->getPrediction();
+        $annotationResult = new ImageAnnotationResult($safeSearch);
+        $suggestion = $annotationResult->getSuggestion();
+        $concerns = $annotationResult->getConcerns();
 
         $db->selectCollection('imageAnnotations')
             ->insertOne([
@@ -52,10 +54,10 @@ class ImagesController extends AppController
                 'customerId' => $this->Authentication->getIdentityData('_id'),
                 'apiKey' => $this->Authentication->getIdentityData('apiKey'),
                 'result' => (array)$result,
-                'prediction' => $prediction,
+                'suggestion' => $suggestion,
                 'created' => new UTCDateTime(),
             ]);
 
-        return $this->json(compact('prediction'));
+        return $this->json(compact('suggestion', 'concerns'));
     }
 }

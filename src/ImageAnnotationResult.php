@@ -8,12 +8,14 @@ use Google\Cloud\Vision\V1\SafeSearchAnnotation;
 
 class ImageAnnotationResult
 {
-    const PREDICTION_UNSAFE = 'unsafe';
-    const PREDICTION_REVIEW = 'review';
-    const PREDICTION_SAFE = 'safe';
+    const SUGGESTION_ACCEPT = 'accept';
+    const SUGGESTION_REJECT = 'reject';
+    const SUGGESTION_REVIEW = 'review';
 
     protected SafeSearchAnnotation $annotation;
     protected ?string $prediction = null;
+    protected ?string $suggestion = null;
+    protected ?array $concerns = null;
 
     public function __construct(SafeSearchAnnotation $annotation)
     {
@@ -23,14 +25,19 @@ class ImageAnnotationResult
     public function setAnnotation(SafeSearchAnnotation $annotation): ImageAnnotationResult
     {
         $this->annotation = $annotation;
-        $this->prediction = $this->evaluate($annotation);
+        $this->suggestion = $this->evaluate($annotation);
 
         return $this;
     }
 
-    public function getPrediction(): ?string
+    public function getSuggestion(): ?string
     {
-        return $this->prediction;
+        return $this->suggestion;
+    }
+
+    public function getConcerns(): ?array
+    {
+        return $this->concerns;
     }
 
     protected function evaluate(SafeSearchAnnotation $annotation): string
@@ -53,18 +60,19 @@ class ImageAnnotationResult
 
         // safe if it's unlikely that any of our concerns are present
         if (count($concerns) === 0) {
-            return self::PREDICTION_SAFE;
+            return self::SUGGESTION_ACCEPT;
         }
+        $this->concerns = $concerns;
 
         // unsafe if there's likely adult content or violence present
         if (
             in_array($result->adult, $concerningLevels) ||
             in_array($result->violence, $concerningLevels)
         ) {
-            return self::PREDICTION_UNSAFE;
+            return self::SUGGESTION_REJECT;
         }
 
         // otherwise, review
-        return self::PREDICTION_REVIEW;
+        return self::SUGGESTION_REVIEW;
     }
 }
