@@ -7,6 +7,7 @@
 
 use Cake\Core\Configure;
 
+$buildVersion = env('BUILD_VERSION');
 ?>
 <!DOCTYPE html>
 <html class="h-full bg-gray-100">
@@ -18,7 +19,7 @@ use Cake\Core\Configure;
     <?= $this->fetch('title') ?>
   </title>
   <?= $this->Html->meta('icon') ?>
-  <?= $this->Html->css(Configure::read('debug') ? 'app' : 'app.min') ?>
+  <?= $this->Html->css(Configure::read('debug') ? 'app' : 'app.min.css?ver=' . $buildVersion) ?>
 
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
