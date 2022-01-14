@@ -16,7 +16,7 @@ $buildVersion = env('BUILD_VERSION');
   <?= $this->Html->charset() ?>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
-    <?= $this->fetch('title') ?>
+    <?= 'filterd'// $this->fetch('title') ?>
   </title>
   <?= $this->Html->meta('icon') ?>
   <?= $this->Html->css(Configure::read('debug') ? 'app' : 'app.min.css?ver=' . $buildVersion) ?>
